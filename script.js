@@ -8,17 +8,6 @@ function validate(isSubmitted = false) {
 	let country = document.getElementById('country').value
 
     let error = false
-
-    // var phone = document.forms['myfrm']['mobileno'];
-    // if(isNaN(phone.value)){
-    //     alert(NAN)
-    //     return false
-    // }
-
-    function containsNumber(firstName){
-        return /[0-9]/.test(firstName);
-    }
-    console.log(containsNumber())
     var a = document.forms[0]
     var genders = ""
     for(let i=0; i<a.length; i++){
@@ -33,8 +22,7 @@ function validate(isSubmitted = false) {
 
 	if(globalIsSubmitted) {
         //firstName Validation
-        // let fstName = parseInt(firstName)
-		if(firstName.length >= 3) {
+		if(firstName.length >= 3 && !(firstName.match(/\d+/g))) {
 			document.getElementById('first-name-valid').style.display = 'block'
 			document.getElementById('first-name-invalid').style.display = 'none'
 		} 
@@ -45,8 +33,7 @@ function validate(isSubmitted = false) {
 		}
 
         //lastName Validation
-        // let lstName = parseInt(lastName)
-		if(lastName.length >= 3) {
+		if(lastName.length >= 3 && !(lastName.match(/\d+/g))) {
 			document.getElementById('last-name-valid').style.display = 'block'
 			document.getElementById('last-name-invalid').style.display = 'none'
 		}else {

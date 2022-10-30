@@ -9,7 +9,7 @@
     <title>RegistrationForm</title>
 </head>
 <body>
-    <form class="row g-3 registration-form" id="registration-form">
+    <form name="myfrm" class="row g-3 registration-form" id="registration-form">
 		<h1 style="text-align: center;" class="display-3">Registration Form</h1>
 		<div class="col-md-6">
 			<label for="first-name" class="form-label">First name</label>
@@ -49,7 +49,7 @@
 			<label for="mobileNumber" class="form-label">Mobile Number</label>
 			<div class="input-group has-validation">
 				<span class="input-group-text" id="inputGroupPrepend">+91</span>
-				<input type="text" class="form-control" id="mobileNumber" aria-describedby="inputGroupPrepend" required autocomplete="off" onkeyup="validate()">
+				<input name="mobileno" type="number" class="form-control" id="mobileNumber" aria-describedby="inputGroupPrepend" required autocomplete="off" onkeyup="validate()">
 				<div class="valid-feedback" id="mobileNumber-valid">
 					Looks good!
 				</div>
@@ -63,35 +63,41 @@
             <label for="gender" class="form-label">Gender</label>
             <br>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="option1" required onkeyup="validate()">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender" value="male" required onkeyup="validate()">
                 <label class="form-check-label" for="male">Male</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="option2" required onkeyup="validate()">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender" value="female" required onkeyup="validate()">
                 <label class="form-check-label" for="female">Female</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="others" value="option2" required onkeyup="validate()">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender" value="others" required onkeyup="validate()">
                 <label class="form-check-label" for="others">Others</label>
             </div>
+            <div class="valid-feedback" id="gender-valid">
+				Looks good!
+			</div>
+			<div class="invalid-feedback" id="gender-invalid">
+				Please select a valid gender.
+			</div>
         </div>
 
 		<div class="col-md-12" style="text-align: center;">
-			<label for="state" class="form-label">Country</label>
-			<select class="form-select" id="state" required onkeyup="validate()">
+			<label for="country" class="form-label">Country</label>
+			<select class="form-select" id="country" required onkeyup="validate()">
 				<option value="None" selected>Choose...</option>
 				<option value="India">India</option>
 				<option value="USA">USA</option>
 			</select>
-			<div class="valid-feedback" id="state-valid">
+			<div class="valid-feedback" id="country-valid">
 				Looks good!
 			</div>
-			<div class="invalid-feedback" id="state-invalid">
-				Please select a valid state.
+			<div class="invalid-feedback" id="country-invalid">
+				Please select a valid country.
 			</div>
 		</div>
 		<div class="col-12" style="text-align: center;">
-			<button class="btn btn-dark" type="button" onclick="validate()">Submit form</button>
+			<button class="btn btn-dark" type="button" onclick="validate(true)">Submit form</button>
 		</div>
 	</form>
 

@@ -18,7 +18,12 @@ body {
     margin: 10px auto;
 }
 
-#state {
+#country {
     width: 300px;
     margin-left: 250px;
+}
+#message{
+    width: 300px;
+    margin-left: 5px;
+    color: red;
 }

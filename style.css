@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    background-color: #c5ecf5;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.registration-form{
+	width: 800px;
+    margin: 10px auto;
+}

@@ -2,7 +2,6 @@ let globalIsSubmitted = false
 
 function validate(isSubmitted = false) {
 	let firstName = document.getElementById('first-name').value
-    console.log(firstName)
 	let lastName = document.getElementById('last-name').value
 	let email = document.getElementById('email').value
 	let mobileNumber = document.getElementById('mobileNumber').value
@@ -16,7 +15,10 @@ function validate(isSubmitted = false) {
     //     return false
     // }
 
-    var digits = /[*0-9]|/gi
+    function containsNumber(firstName){
+        return /[0-9]/.test(firstName);
+    }
+    console.log(containsNumber())
     var a = document.forms[0]
     var genders = ""
     for(let i=0; i<a.length; i++){
@@ -31,24 +33,23 @@ function validate(isSubmitted = false) {
 
 	if(globalIsSubmitted) {
         //firstName Validation
+        // let fstName = parseInt(firstName)
 		if(firstName.length >= 3) {
 			document.getElementById('first-name-valid').style.display = 'block'
 			document.getElementById('first-name-invalid').style.display = 'none'
-		} else if(isNaN(firstName)){
-            alert('NAN')
-            return false
-        }
-        else {
+		} 
+        else{
 			document.getElementById('first-name-invalid').style.display = 'block'
 			document.getElementById('first-name-valid').style.display = 'none'
 			error = true
 		}
 
         //lastName Validation
+        // let lstName = parseInt(lastName)
 		if(lastName.length >= 3) {
 			document.getElementById('last-name-valid').style.display = 'block'
 			document.getElementById('last-name-invalid').style.display = 'none'
-		} else {
+		}else {
 			document.getElementById('last-name-invalid').style.display = 'block'
 			document.getElementById('last-name-valid').style.display = 'none'
 			error = true
@@ -70,7 +71,8 @@ function validate(isSubmitted = false) {
 		}
 
         //mobile number validation
-		if(mobileNumber.length == 10 && mobileNumber.length != "") {
+        // let mobileno = parseInt(mobileNumber)
+		if(mobileNumber.length == 10 && mobileNumber.length != "" &&mobileNumber.indexOf(1) != 0 && mobileNumber.indexOf(2) != 0 && mobileNumber.indexOf(3) != 0 && mobileNumber.indexOf(4) != 0 && mobileNumber.indexOf(4) != 0) {
 			document.getElementById('mobileNumber-valid').style.display = 'block'
 			document.getElementById('mobileNumber-invalid').style.display = 'none'
 		} else {
